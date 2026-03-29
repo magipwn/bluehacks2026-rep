@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+    z-index: 20;            /* above camera + footer */
+}
+
+.note {
+    padding-top: 0;
+    color: #6b996e;
+}
+
+.modal {
+    background-color: #e8ebe4;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.waste_image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    width: 160px;
+    background-color: white;
+    border-radius: 30px;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.water_bottle {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 180px;
+    width: auto;
+    z-index: 2;
+}
+
+h1 {
+    margin: -20px 0 0 0;
+    font-size: 2.5rem;
+}
+
+.bin {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #2e7033;
+}
+
+button {
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.x {
+    width: 6%;
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.bin_photo {
+    position: absolute;
+    width: 18%;
+    z-index: 3;
+    right: 30px;
+    top: 110px;
+}
+
+.description {
+    gap: 10px;
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.threw {
+    background-color: #6b996e;
+    border: 0;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 35px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+
+/* ── iPhone 12 Pro  (390 × 844) ── */
+@media screen and (max-width: 430px) {
+    .modal {
+        width: 92%;
+        padding: 30px 24px;
+        border-radius: 32px;
+        /* keep it from touching the footer */
+        max-height: 82vh;
+        overflow-y: auto;
+    }
+
+    h1 { font-size: 2rem; }
+
+    .bin { font-size: 1.2rem; }
+
+    .waste_image {
+        width: 170px;
+        height: 170px;
+    }
+
+    .photo_bg {
+        width: 140px;
+        height: 140px;
+    }
+
+    .water_bottle { height: 155px; }
+
+    .threw {
+        padding: 13px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ── Laptop / desktop  (≥ 1024 px) ── */
+@media screen and (min-width: 1024px) {
+    .modal {
+        max-width: 460px;
+        padding: 48px;
+        border-radius: 48px;
+    }
+
+    h1 { font-size: 2.8rem; }
+
+    .waste_image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .photo_bg {
+        width: 180px;
+        height: 180px;
+    }
+
+    .water_bottle { height: 200px; }
+
+    .threw {
+        padding: 16px 44px;
+        font-size: 1.05rem;
+        border-radius: 14px;
+    }
+}

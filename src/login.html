@@ -1,0 +1,78 @@
+<!--this class was created using Generative AI -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>EcoScan — Login</title>
+  </head>
+  <body class="login-page">
+
+    <header class="login-header grid">
+      <a href="#" class="login-logo">
+        <div class="logo-icon">♻️</div>
+        <span>EcoScan</span>
+      </a>
+    </header>
+
+    <main class="login-main grid">
+      <section class="login-hero">
+        <span class="login-eyebrow">Waste Tracking System</span>
+        <h1>Track your<br /><em>eco impact</em>,<br />every scan.</h1>
+        <p>
+          Log in to see your personal recycling history, earn points,
+          and compare your impact with others in your community.
+        </p>
+        <div class="login-stats">
+          <div class="stat-item">
+            <span class="stat-value">3</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">14</span>
+            <span class="stat-label">Items Scanned</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Item Types</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="login-form-wrap">
+        <div class="form-card">
+          <h2>Welcome back</h2>
+          <p class="form-subtitle">Enter your credentials to continue.</p>
+
+          <fieldset class="form-fieldset">
+            <div class="field-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username"
+                placeholder="e.g. SyncSeven" autocomplete="username" required />
+            </div>
+            <div class="field-group">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city"
+                placeholder="e.g. Quezon" required />
+            </div>
+            <div class="field-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password"
+                placeholder="••••••••" autocomplete="current-password" required />
+            </div>
+
+            <div id="login-error" class="error-msg" role="alert"></div>
+
+            <button type="button" class="login-btn" onclick="handleLogin()">
+              Login →
+            </button>
+          </fieldset>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="../js/users.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ── Base (mobile-first) ── */
+.camera-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;          /* full viewport behind everything */
+    background-color: #000;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#camera {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #558B7D;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: 5;
+}
+
+.shutter-wrapper {
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.shutter-btn {
+    width: 70px;
+    height: 70px;
+    background-color: #ccc;
+    border: 5px solid #558B7D;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.shutter-btn:hover  { transform: scale(1.1); }
+.shutter-btn:active { transform: scale(0.9); }
+
+
+/* ── iPhone 12 Pro  (390 × 844) ── */
+@media screen and (max-width: 430px) {
+    .camera-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;       /* bleed behind the footer bar */
+        border: none;
+        border-radius: 0;
+    }
+
+    .bottom-bar {
+        height: 11vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .shutter-btn {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+
+/* ── Laptop / desktop  (≥ 1024 px) ── */
+@media screen and (min-width: 1280px) {
+    .camera-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;       /* still covers the full screen behind footer */
+        border: none;
+        border-radius: 0;
+        max-width: none;
+        margin: 0;
+    }
+
+    /* On large screens give the footer a little more breathing room */
+    .bottom-bar {
+        height: 8vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .shutter-wrapper {
+        bottom: 3vh;
+    }
+
+    .shutter-btn {
+        width: 80px;
+        height: 80px;
+    }
+}
